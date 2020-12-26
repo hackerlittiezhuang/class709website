@@ -3,8 +3,69 @@
 <head>
     <meta charset="utf-8">
     <title>709官网</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/mdui/1.0.1/css/mdui.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/mdui/1.0.1/js/mdui.min.js"></script>
+    <style>
+        #b1
+        {
+            height: 100vh;
+            background:#29b6f6;
+            animation:b1 8s;
+            /* animation-timing-function:ease-in;  */
+        }
+
+        @keyframes b1
+            {
+            0%   {background:#29b6f6;}
+            40%  {background:#5c6bc0;}
+            80% {background:#81C784;}
+            100% {background:#81C784;}
+        }
+
+        #b2
+        {
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="mdui-valign mdui-container-fluid" id="b1">
+        <p id="f1" class="mdui-center mdui-typo-display-3 mdui-text-color-white-text">对不起，来晚了</p>
+        <p id="f2" class="mdui-center mdui-typo-display-3 mdui-text-color-white-text mdui-hidden">现在</p>
+        <p id="f3" class="mdui-center mdui-typo-display-3 mdui-text-color-white-text mdui-hidden">立马补偿</p>
+    </div>
+    <div class="mdui-valign mdui-container-fluid" id="b2">
+        <span class="mdui-center mdui-typo-display-3">
+            <img src="/static/hat.svg" width="160vh" class="mdui-center"><br />
+            Merry Christmas<br />
+            下列邀请码请收好<br />
+            (元旦跨年网站正式开放)<br />
+            <div class="mdui-color-blue-200 mdui-center mdui-typo-display-3">
+                8SI4UL
+            </span>
+        </span><br />
+        
+    </div>
+    <script>
+        $("#b2").toggleClass("mdui-hidden");
+        function sleep (time) {
+            return new Promise((resolve) => setTimeout(resolve, time));
+        }
+        $().ready(
+            async function() {
+                await sleep(2000);
+                $("#f1").toggleClass("mdui-hidden");
+                $("#f2").toggleClass("mdui-hidden");
+                await sleep(2000);
+                $("#f2").toggleClass("mdui-hidden");
+                $("#f3").toggleClass("mdui-hidden");
+                await sleep(3000);
+                $("#f3").toggleClass("mdui-hidden");
+                $("#b1").toggleClass("mdui-hidden");
+                $("#b2").toggleClass("mdui-hidden");
+            }
+        );
+    </script>
 </body>
 </html>
